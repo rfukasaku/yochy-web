@@ -3,7 +3,7 @@
     <v-img src="/logo.png" width="40vw" max-width="2084" aspect-ratio="1"></v-img>
     <v-container>
       <v-row justify="center">
-        <v-btn x-large color="primary ma-4" width="80vw" max-width="600px">あそぶ</v-btn>
+        <v-btn href="play" x-large color="primary ma-4" width="80vw" max-width="600px">あそぶ</v-btn>
       </v-row>
       <v-row justify="center">
         <v-btn x-large color="white ma-4" width="80vw" max-width="600px" >あそびかた</v-btn>
