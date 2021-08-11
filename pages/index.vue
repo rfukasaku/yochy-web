@@ -3,10 +3,10 @@
     <v-img src="/logo.png" width="40vw" max-width="2084" aspect-ratio="1"></v-img>
     <v-container>
       <v-row justify="center">
-        <v-btn href="play" x-large color="primary ma-4" width="80vw" max-width="600px">あそぶ</v-btn>
+        <v-btn href="play" x-large class="primary ma-4 font-weight-bold" width="80vw" max-width="600px">あそぶ</v-btn>
       </v-row>
       <v-row justify="center">
-        <v-btn x-large color="white ma-4" width="80vw" max-width="600px" >あそびかた</v-btn>
+        <v-btn x-large class="white ma-4 font-weight-bold" width="80vw" max-width="600px" >あそびかた</v-btn>
       </v-row>
     </v-container>
     <v-footer absolute color="background">

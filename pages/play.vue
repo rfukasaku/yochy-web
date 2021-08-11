@@ -25,12 +25,12 @@
           <v-row>
             <v-col cols="6">
               <v-btn x-large block class="red darken-2" :disabled="buttonDisabled" @click="endButtonEvent()">
-                <span class="white--text">終わりにする</span>
+                <span class="white--text font-weight-bold">終わりにする</span>
               </v-btn>
             </v-col>
             <v-col cols="6">
               <v-btn x-large block class="primary" :disabled="buttonDisabled" @click="nextButtonEvent()">
-                <span class="white--text">{{ nextButtonLabel }}</span>
+                <span class="white--text font-weight-bold">{{ nextButtonLabel }}</span>
               </v-btn>
             </v-col>
           </v-row>
