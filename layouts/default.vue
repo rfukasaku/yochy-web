@@ -8,13 +8,6 @@
   </v-app>
 </template>
 
-<style>
-.v-application {
-  font-family: 'Yomogi';
-  font-weight: bold;
-}
-</style>
-
 <script>
 export default {
   data () {
@@ -42,3 +35,10 @@ export default {
   }
 }
 </script>
+
+<style>
+.v-application {
+  font-family: 'Yomogi';
+  font-weight: bold;
+}
+</style>
