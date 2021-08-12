@@ -42,7 +42,20 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/proxy'
   ],
+
+  axios: {
+    proxy: true
+  },
+
+  proxy: {
+    '/api/': {
+      target: 'https://asia-northeast1-yochy-cea25.cloudfunctions.net',
+      pathRewrite: {'^/api/': ''}
+    }
+  },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {

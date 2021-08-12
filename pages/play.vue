@@ -77,13 +77,16 @@ export default class PlayPage extends Vue {
     'img-23.png',
   ];
 
-  created(): void {
-    this.messages = [
-      '好きな食べ物はなんですか？',
-      '子供の頃の夢はなんですか？',
-      'おすすめの本はなんですか？',
-    ];
-    this.buttonDisabled = false;
+  async created(): Promise<void> {
+    await this.$axios.$get('/api/getThemes')
+      .then(res => {
+        this.messages = res.themes;
+        this.buttonDisabled = false;
+      })
+      .catch(e => {
+        // eslint-disable-next-line no-console
+        console.error(e);
+      });
   }
 
   sleep(ms: number): Promise<void> {
