@@ -42,6 +42,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator';
+import { shuffle } from 'lodash';
 
 @Component
 export default class PlayPage extends Vue {
@@ -80,7 +81,7 @@ export default class PlayPage extends Vue {
   async created(): Promise<void> {
     await this.$axios.$get('/api/getThemes')
       .then(res => {
-        this.messages = res.themes;
+        this.messages = shuffle(res.themes);
         this.buttonDisabled = false;
       })
       .catch(e => {
