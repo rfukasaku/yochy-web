@@ -37,6 +37,10 @@ export default {
 </script>
 
 <style>
+html {
+  background-color: var(--v-background-base);
+}
+
 .v-application {
   font-family: 'Yomogi';
   font-weight: bold;
