@@ -9,27 +9,25 @@
 
     <v-row justify="center" align-content="center" style="height: 100vh;">
       <v-col cols="12" align="center">
-        <v-card class="d-flex align-center justify-center pa-4 mx-auto" max-width="550" min-height="150" outlined>
+        <v-card class="d-flex align-center justify-center pa-4 mx-auto" max-width="550" height="15vh" max-height="150" outlined>
           <div>
             {{ message }}
           </div>
         </v-card>
       </v-col>
       <v-col cols="12" align="center">
-        <v-container class="pa-4">
-          <v-img :src="require(`~/assets/images/${imageNames[imageIndex]}`)" max-height="300" max-width="300" aspect-ratio="1"></v-img>
-        </v-container>
+        <img :src="require(`~/assets/images/${imageNames[imageIndex]}`)" style="height: 40vh; max-height: 300px; aspect-ratio: 1" />
       </v-col>
       <v-col cols="12" align="center">
-        <v-container class="pa-4">
+        <v-container>
           <v-row>
             <v-col cols="6">
-              <v-btn x-large block class="red darken-2" :disabled="buttonDisabled" @click="endButtonEvent()">
-                <span class="white--text font-weight-bold">終わりにする</span>
+              <v-btn x-large block class="red darken-2" :disabled="buttonDisabled" @click="endButtonEvent()" max-width="600px" height="5vh" max-height="50">
+                <span class="white--text font-weight-bold">おしまい</span>
               </v-btn>
             </v-col>
             <v-col cols="6">
-              <v-btn x-large block class="primary" :disabled="buttonDisabled" @click="nextButtonEvent()">
+              <v-btn x-large block class="primary" :disabled="buttonDisabled" @click="nextButtonEvent()" max-width="600px" height="5vh" max-height="50">
                 <span class="white--text font-weight-bold">{{ nextButtonLabel }}</span>
               </v-btn>
             </v-col>
@@ -153,7 +151,7 @@ export default class PlayPage extends Vue {
     this.buttonDisabled = false;
 
     if (this.messageIndex === 0) {
-      this.nextButtonLabel = '次のお題へ';
+      this.nextButtonLabel = '次のお題';
     }
 
     if (this.messageIndex === this.messages.length - 1) {
