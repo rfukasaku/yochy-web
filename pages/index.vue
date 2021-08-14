@@ -4,7 +4,7 @@
       <v-col cols="12" align="center">
         <v-card class="d-flex align-center justify-center pa-4 mx-auto rounded-circle" max-width="450" height="10vh" min-height="50" max-height="150" outlined>
           <div>
-            あなたの代わりに話題を考えます！
+            あなたの代わりにお題を考えます！
           </div>
         </v-card>
       </v-col>
