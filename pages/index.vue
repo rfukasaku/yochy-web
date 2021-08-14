@@ -16,7 +16,7 @@
       <v-col cols="12" align="center">
         <v-container>
           <v-row justify="center">
-            <v-btn href="play" x-large class="primary ma-4 font-weight-bold" width="80vw" max-width="600px" height="5vh" max-height="50">あそぶ</v-btn>
+            <v-btn to="/play" x-large class="primary ma-4 font-weight-bold" width="80vw" max-width="600px" height="5vh" max-height="50">あそぶ</v-btn>
           </v-row>
           <v-row justify="center">
             <v-btn x-large class="white ma-4 font-weight-bold" width="80vw" max-width="600px" height="5vh" max-height="50">このアプリについて</v-btn>

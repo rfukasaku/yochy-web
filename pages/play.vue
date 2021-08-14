@@ -37,6 +37,10 @@
         </v-container>
       </v-col>
     </v-row>
+
+    <v-overlay :value="overlay">
+      <v-progress-circular indeterminate size="64"></v-progress-circular>
+    </v-overlay>
   </div>
 </template>
 
@@ -47,6 +51,7 @@ import { shuffle } from 'lodash';
 @Component
 export default class PlayPage extends Vue {
   buttonDisabled = true;
+  overlay = true;
   nextButtonLabel = 'スタート';
   message = 'スタートを押してください';
   messages: string[] = [];
@@ -82,6 +87,7 @@ export default class PlayPage extends Vue {
     await this.$axios.$get('/api/getThemes')
       .then(res => {
         this.messages = shuffle(res.themes);
+        this.overlay = false;
         this.buttonDisabled = false;
       })
       .catch(e => {
