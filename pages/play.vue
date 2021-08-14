@@ -21,12 +21,12 @@
           <v-col cols="12" align="center">
             <v-row>
               <v-col cols="6">
-                <v-btn x-large block class="red darken-2" :disabled="buttonDisabled" @click="endButtonEvent()" height="6vh" max-width="600px" max-height="55">
+                <v-btn x-large block class="red darken-2" :disabled="buttonDisabled" height="6vh" max-width="600px" max-height="55" @click="endButtonEvent()">
                   <span class="white--text font-weight-bold">おしまい</span>
                 </v-btn>
               </v-col>
               <v-col cols="6">
-                <v-btn x-large block class="primary" :disabled="buttonDisabled" @click="nextButtonEvent()" height="6vh" max-width="600px" max-height="55">
+                <v-btn x-large block class="primary" :disabled="buttonDisabled" height="6vh" max-width="600px" max-height="55" @click="nextButtonEvent()">
                   <span class="white--text font-weight-bold">{{ nextButtonLabel }}</span>
                 </v-btn>
               </v-col>
@@ -88,7 +88,7 @@ export default class PlayPage extends Vue {
         this.overlay = false;
         this.buttonDisabled = false;
       })
-      .catch(e => {
+      .catch(_ => {
         alert('エラーが発生しました。トップ画面に戻ります。');
         this.$router.push('/');
       });
