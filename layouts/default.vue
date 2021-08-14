@@ -39,6 +39,7 @@ export default {
 <style>
 html {
   background-color: var(--v-background-base);
+  overflow: hidden;
 }
 
 .v-application {
