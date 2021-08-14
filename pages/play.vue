@@ -1,45 +1,45 @@
 <template>
-  <div>
-    <!-- 画像の読み込み -->
-    <v-container v-show="false">
-      <div v-for="name in imageNames" :key="name">
-        <img :src="require(`~/assets/images/${name}`)" width="1" height="1">
-      </div>
-    </v-container>
-
-    <v-row justify="center" align-content="center" style="height: 100vh;">
-      <v-col cols="12" align="center">
-        <v-card class="d-flex align-center justify-center pa-4 mx-auto" max-width="550" height="15vh" max-height="150" outlined>
-          <div>
-            {{ message }}
+  <v-app>
+    <v-main class="background">
+      <v-container>
+        <!-- 画像の読み込み -->
+        <div v-show="false">
+          <div v-for="name in imageNames" :key="name">
+            <img :src="require(`~/assets/images/${name}`)" width="1" height="1">
           </div>
-        </v-card>
-      </v-col>
-      <v-col cols="12" align="center">
-        <img :src="require(`~/assets/images/${imageNames[imageIndex]}`)" style="height: 40vh; max-height: 300px; aspect-ratio: 1" />
-      </v-col>
-      <v-col cols="12" align="center">
-        <v-container>
-          <v-row>
-            <v-col cols="6">
-              <v-btn x-large block class="red darken-2" :disabled="buttonDisabled" @click="endButtonEvent()" max-width="600px" height="5vh" max-height="50">
-                <span class="white--text font-weight-bold">おしまい</span>
-              </v-btn>
-            </v-col>
-            <v-col cols="6">
-              <v-btn x-large block class="primary" :disabled="buttonDisabled" @click="nextButtonEvent()" max-width="600px" height="5vh" max-height="50">
-                <span class="white--text font-weight-bold">{{ nextButtonLabel }}</span>
-              </v-btn>
-            </v-col>
-          </v-row>
-        </v-container>
-      </v-col>
-    </v-row>
+        </div>
 
-    <v-overlay :value="overlay">
-      <v-progress-circular indeterminate size="64"></v-progress-circular>
-    </v-overlay>
-  </div>
+        <v-row justify="center" align-content="center" style="height: 100vh;">
+          <v-col cols="12" align="center">
+            <v-card class="d-flex align-center justify-center pa-4 mx-auto" height="15vh" max-width="550" max-height="150" outlined>
+              {{ message }}
+            </v-card>
+          </v-col>
+          <v-col cols="12" align="center">
+            <img class="anime-img" :src="require(`~/assets/images/${imageNames[imageIndex]}`)" />
+          </v-col>
+          <v-col cols="12" align="center">
+            <v-row>
+              <v-col cols="6">
+                <v-btn x-large block class="red darken-2" :disabled="buttonDisabled" @click="endButtonEvent()" height="6vh" max-width="600px" max-height="55">
+                  <span class="white--text font-weight-bold">おしまい</span>
+                </v-btn>
+              </v-col>
+              <v-col cols="6">
+                <v-btn x-large block class="primary" :disabled="buttonDisabled" @click="nextButtonEvent()" height="6vh" max-width="600px" max-height="55">
+                  <span class="white--text font-weight-bold">{{ nextButtonLabel }}</span>
+                </v-btn>
+              </v-col>
+            </v-row>
+          </v-col>
+        </v-row>
+
+        <v-overlay :value="overlay">
+          <v-progress-circular color="primary" indeterminate width="5" size="64"></v-progress-circular>
+        </v-overlay>
+      </v-container>
+    </v-main>
+  </v-app>
 </template>
 
 <script lang="ts">
@@ -89,8 +89,8 @@ export default class PlayPage extends Vue {
         this.buttonDisabled = false;
       })
       .catch(e => {
-        // eslint-disable-next-line no-console
-        console.error(e);
+        alert('エラーが発生しました。トップ画面に戻ります。');
+        this.$router.push('/');
       });
   }
 
@@ -169,3 +169,11 @@ export default class PlayPage extends Vue {
   }
 }
 </script>
+
+<style scoped>
+.anime-img {
+  height: 40vh;
+  max-height: 300px;
+  aspect-ratio: 1;
+}
+</style>
