@@ -7,7 +7,7 @@ export default {
     titleTemplate: '%s - yochy-web',
     title: 'yochy-web',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'ja'
     },
     meta: [
       { charset: 'utf-8' },
@@ -62,7 +62,6 @@ export default {
     customVariables: ['~/assets/variables.scss'],
     theme: {
       dark: false,
-      options: { customProperties: true },
       themes: {
         light: {
           primary: '#DF711B',
