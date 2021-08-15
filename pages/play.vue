@@ -5,7 +5,7 @@
         <!-- 画像の読み込み -->
         <div v-show="false">
           <div v-for="name in imageNames" :key="name">
-            <img :src="require(`~/assets/images/${name}`)" width="1" height="1">
+            <img :src="require(`~/assets/images/anime/${name}`)" width="1" height="1">
           </div>
         </div>
 
@@ -16,7 +16,7 @@
             </v-card>
           </v-col>
           <v-col cols="12" align="center">
-            <img class="anime-img" :src="require(`~/assets/images/${imageNames[imageIndex]}`)" />
+            <img class="anime-img" :src="require(`~/assets/images/anime/${imageNames[imageIndex]}`)" />
           </v-col>
           <v-col cols="12" align="center">
             <v-row>
