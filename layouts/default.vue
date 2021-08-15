@@ -5,9 +5,8 @@
 </template>
 
 <style>
-html, body {
-  height: 100%;
-  overflow: hidden;
+html {
+  overscroll-behavior: none;
 }
 
 .v-application {
