@@ -2,6 +2,8 @@ export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
 
+  target: 'static',
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'ヨッチー',
@@ -21,11 +23,12 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    { src: '~assets/main.scss' }
+    '~assets/main.scss'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~/plugins/repository'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -41,24 +44,15 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@nuxtjs/axios',
-    '@nuxtjs/proxy'
+    '@nuxtjs/axios'
   ],
 
-  axios: {
-    proxy: true
-  },
-
-  proxy: {
-    '/api/': {
-      target: 'https://asia-northeast1-yochy-cea25.cloudfunctions.net',
-      pathRewrite: {'^/api/': ''}
-    }
-  },
+  axios: {},
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
+    treeShake: true,
     theme: {
       dark: false,
       themes: {
@@ -75,5 +69,9 @@ export default {
     babel: {
       plugins: [["@babel/plugin-proposal-private-property-in-object", { "loose": true }]]
     }
+  },
+
+  generate: { 
+    dir: 'public' 
   }
 }

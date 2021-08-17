@@ -24,7 +24,7 @@
             <p>お問い合わせは以下のボタンからお願いします。</p>
             <p>不具合やご要望など、ご連絡いただけるとありがたいです。</p>
             <p>「こんなお題を追加して欲しい！」などのご意見もお待ちしております。</p>
-            <v-btn :href="googleFormURL" x-large class="primary ma-4 font-weight-bold" target="_blank">お問い合わせフォーム</v-btn>
+            <v-btn :href="googleFormURL" x-large class="primary ma-4" target="_blank">お問い合わせフォーム</v-btn>
           </div>
         </v-container>
       </v-container>

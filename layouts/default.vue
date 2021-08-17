@@ -10,7 +10,6 @@ html {
 }
 
 .v-application {
-  font-family: 'Yomogi';
   font-weight: bold;
 }
 </style>

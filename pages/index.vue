@@ -13,10 +13,10 @@
           </v-col>
           <v-col cols="12" align="center">
             <v-row justify="center">
-              <v-btn to="/play" x-large class="primary ma-4 font-weight-bold" width="80vw" max-width="600" height="6vh" max-height="55">あそぶ</v-btn>
+              <v-btn to="/play" x-large class="primary ma-4" width="80vw" max-width="600" height="6vh" max-height="55">あそぶ</v-btn>
             </v-row>
             <v-row justify="center">
-              <v-btn to="/about" x-large class="white ma-4 font-weight-bold" width="80vw" max-width="600" height="6vh" max-height="55">このアプリについて</v-btn>
+              <v-btn to="/about" x-large class="white ma-4" width="80vw" max-width="600" height="6vh" max-height="55">このアプリについて</v-btn>
             </v-row>
           </v-col>
         </v-row>

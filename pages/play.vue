@@ -22,12 +22,12 @@
             <v-row>
               <v-col cols="6">
                 <v-btn x-large block class="red darken-2" :disabled="buttonDisabled" height="6vh" max-width="600px" max-height="55" @click="endButtonEvent()">
-                  <span class="white--text font-weight-bold">おしまい</span>
+                  <span class="white--text">おしまい</span>
                 </v-btn>
               </v-col>
               <v-col cols="6">
                 <v-btn x-large block class="primary" :disabled="buttonDisabled" height="6vh" max-width="600px" max-height="55" @click="nextButtonEvent()">
-                  <span class="white--text font-weight-bold">{{ nextButtonLabel }}</span>
+                  <span class="white--text">{{ nextButtonLabel }}</span>
                 </v-btn>
               </v-col>
             </v-row>
@@ -82,16 +82,17 @@ export default class PlayPage extends Vue {
   ];
 
   async created(): Promise<void> {
-    await this.$axios.$get('/api/getThemes')
-      .then(res => {
-        this.messages = shuffle(res.themes);
-        this.overlay = false;
-        this.buttonDisabled = false;
-      })
-      .catch(_ => {
-        alert('エラーが発生しました。トップ画面に戻ります。');
-        this.$router.push('/');
-      });
+    const res = await this.$themeRepository.getThemes();
+
+    if (res.status !== 200) {
+      alert('エラーが発生しました。トップ画面に戻ります。');
+      this.$router.push('/');
+      return;
+    }
+
+    this.messages = shuffle(res.data.themes);
+    this.overlay = false;
+    this.buttonDisabled = false;
   }
 
   sleep(ms: number): Promise<void> {
