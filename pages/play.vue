@@ -48,6 +48,7 @@ import { shuffle } from 'lodash';
 
 @Component
 export default class PlayPage extends Vue {
+  from: string | (string | null)[] = '';
   buttonDisabled = true;
   overlay = true;
   nextButtonLabel = 'スタート';
@@ -82,6 +83,7 @@ export default class PlayPage extends Vue {
   ];
 
   async created(): Promise<void> {
+    this.from = this.$route.query.from;
     const res = await this.$themeRepository.getThemes();
 
     if (res.status !== 200) {
@@ -163,6 +165,10 @@ export default class PlayPage extends Vue {
   }
 
   endButtonEvent(): void {
+    if (this.from === 'mobile') {
+      window.location.href = 'yochy-mobile:backToHomePage';
+      return;
+    }
     const result = confirm('終了してトップ画面に戻りますか？');
     if (result) {
       this.$router.push('/');

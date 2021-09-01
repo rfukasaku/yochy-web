@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar app fixed class="white">
+    <v-app-bar app fixed class="white" v-show="from !== 'mobile'">
       <v-app-bar-nav-icon @click="back()">
         <v-icon large color="black">mdi-chevron-left</v-icon>
       </v-app-bar-nav-icon>
@@ -37,7 +37,12 @@ import { Component, Vue } from 'nuxt-property-decorator';
 
 @Component
 export default class AboutPage extends Vue {
+  from: string | (string | null)[] = '';
   googleFormURL = 'https://docs.google.com/forms/d/e/1FAIpQLSetLQIcyNt628Er-HqRlPGZKZP97a095m7O8lvtUNO2dv4S8Q/viewform?usp=sf_link';
+
+  created(): void {
+    this.from = this.$route.query.from;
+  }
 
   back(): void {
     this.$router.push('/');
