@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar app fixed class="white" v-show="from !== 'mobile'">
+    <v-app-bar v-show="from !== 'mobile'" app fixed class="white">
       <v-app-bar-nav-icon @click="back()">
         <v-icon large color="black">mdi-chevron-left</v-icon>
       </v-app-bar-nav-icon>
