@@ -3,3 +3,12 @@
   src: url('~assets/fonts/Yomogi-Regular.ttf') format('truetype');
   font-display: block;
 }
+
+html {
+  overscroll-behavior: none;
+}
+
+.v-application {
+  user-select: none;
+  font-weight: bold;
+}
