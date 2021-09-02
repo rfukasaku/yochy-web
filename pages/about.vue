@@ -24,7 +24,7 @@
             <p>お問い合わせは以下のボタンからお願いします。</p>
             <p>不具合やご要望など、ご連絡いただけるとありがたいです。</p>
             <p>「こんなお題を追加して欲しい！」などのご意見もお待ちしております。</p>
-            <v-btn :href="googleFormURL" x-large class="primary ma-4" target="_blank">お問い合わせフォーム</v-btn>
+            <v-btn x-large class="primary ma-4" @click="contactButtonEvent()">お問い合わせフォーム</v-btn>
           </div>
         </v-container>
       </v-container>
@@ -38,7 +38,6 @@ import { Component, Vue } from 'nuxt-property-decorator';
 @Component
 export default class AboutPage extends Vue {
   from: string | (string | null)[] = '';
-  googleFormURL = 'https://docs.google.com/forms/d/e/1FAIpQLSetLQIcyNt628Er-HqRlPGZKZP97a095m7O8lvtUNO2dv4S8Q/viewform?usp=sf_link';
 
   created(): void {
     this.from = this.$route.query.from;
@@ -46,6 +45,14 @@ export default class AboutPage extends Vue {
 
   back(): void {
     this.$router.push('/');
+  }
+
+  contactButtonEvent(): void {
+    if (this.from === 'mobile') {
+      window.location.href = 'yochy-mobile:openContactForm';
+      return;
+    }
+    window.open('https://docs.google.com/forms/d/e/1FAIpQLSetLQIcyNt628Er-HqRlPGZKZP97a095m7O8lvtUNO2dv4S8Q/viewform?usp=sf_link', '_blank');
   }
 }
 </script>
