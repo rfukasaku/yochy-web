@@ -41,6 +41,17 @@ export default {
 
   axios: {},
 
+  pwa: {
+    manifest: {
+      name: 'ヨッチー',
+      short_name: 'ヨッチー',
+      description: 'ヨッチーはあなたの代わりにお題を考えるサービスです',
+      background_color: '#64C9CF',
+      theme_color: '#64C9CF',
+      lang: 'ja'
+    }
+  },
+
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     treeShake: true,
