@@ -91,3 +91,6 @@ sw.*
 
 # @nuxtjs/pwa
 sw.*
+
+# firebase deploy cache
+.firebase/*.cache
