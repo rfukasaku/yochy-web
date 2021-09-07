@@ -1,17 +1,32 @@
+const title = 'ヨッチー | 楽しい話題提供アプリ';
+const description = '楽しく盛り上がれる話題をランダムに表示します。飲み会や合コン、暇つぶしにオススメです！';
+const url = 'https://yochy-cea25.web.app';
+
 export default {
   ssr: false,
 
   target: 'static',
 
   head: {
-    title: 'ヨッチー',
+    title: title,
     htmlAttrs: {
-      lang: 'ja'
+      lang: 'ja',
+      prefix: 'og: http://ogp.me/ns#'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1, user-scalable=no' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'description', name: 'description', content: title },
+      { hid: 'keywords', name: 'keywords', content: '話題,お題,初対面,メーカー,ランダム' },
+      { hid: 'author', name: 'author', content: 'fukky21' },
+      { hid: 'og:site_name', property: 'og:site_name', content: title },
+      { hid: 'og:type', property: 'og:type', content: 'website' },
+      { hid: 'og:url', property: 'og:url', content: url },
+      { hid: 'og:title', property: 'og:title', content: title },
+      { hid: 'og:description', property: 'og:description', content: description },
+      { hid: 'og:image', property: 'og:image', content: `${url}/ogp.png` },
+      { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
+      { hid: 'twitter:site', name: 'twitter:site', content: '@fukky21' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
@@ -43,9 +58,9 @@ export default {
 
   pwa: {
     manifest: {
-      name: 'ヨッチー',
+      name: title,
       short_name: 'ヨッチー',
-      description: 'ヨッチーはあなたの代わりにお題を考えるサービスです',
+      description: description,
       background_color: '#64C9CF',
       theme_color: '#64C9CF',
       lang: 'ja'
