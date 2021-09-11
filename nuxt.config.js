@@ -8,7 +8,7 @@ export default {
   target: 'static',
 
   head: {
-    title: title,
+    title,
     htmlAttrs: {
       lang: 'ja',
       prefix: 'og: http://ogp.me/ns#'
@@ -60,7 +60,7 @@ export default {
     manifest: {
       name: title,
       short_name: 'ヨッチー',
-      description: description,
+      description,
       background_color: '#64C9CF',
       theme_color: '#64C9CF',
       lang: 'ja'
