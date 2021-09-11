@@ -51,10 +51,15 @@ export default {
   ],
 
   modules: [
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/gtm'
   ],
 
   axios: {},
+
+  gtm: {
+    id: 'GTM-NZZ4LV8'
+  },
 
   pwa: {
     manifest: {
