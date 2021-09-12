@@ -7,24 +7,32 @@
       <v-app-bar-title>このアプリについて</v-app-bar-title>
     </v-app-bar>
     <v-main class="background">
-      <v-container>
-        <h2># あそびかた</h2>
-        <v-container>
-          <v-img :src="require(`~/assets/images/screenshot.png`)" height="50vw" max-height="400" style="border: solid;" contain></v-img>
-          <div class="ma-4">
+      <v-container class="px-8">
+        <v-container class="my-4">
+          <h2>ヨッチーとは</h2>
+          <div class="mt-4">
+            <p>いろいろな話題をランダムに提供するアプリです。みんなで盛り上がれる楽しいお題をたくさん収録しています！</p>
+            <p>初対面の人と飲み会で盛り上がりたいとき、合コンの席で共通の趣味を見つけたいときなど、話題に困ったときのお供としてご利用ください！</p>
+            <p>ビデオ通話で画面共有しながら遊ぶのもオススメです！</p>
+          </div>
+        </v-container>
+        <v-container class="my-4">
+          <h2>あそびかた</h2>
+          <v-img :src="require(`~/assets/images/screenshot.png`)" class="my-4" height="50vw" max-height="400" style="border: solid;" contain></v-img>
+          <div>
             <p>「次のお題」ボタンを押すと、ヨッチーがお題を考えはじめます。</p>
             <p>数秒のアニメーションの後、お題が表示されます。</p>
             <p>お題は毎回ランダムに決定されます。</p>
             <p>終了したいときは「おしまい」ボタンを押してください。トップ画面に戻ります。</p>
           </div>
         </v-container>
-        <h2># お問い合わせ</h2>
-        <v-container>
-          <div class="ma-4">
-            <p>お問い合わせは以下のボタンからお願いします。</p>
+        <v-container class="my-4">
+          <h2>お問い合わせ</h2>
+          <div class="mt-4">
+            <p>お問い合わせは下のボタンからお願いします。</p>
             <p>不具合やご要望など、ご連絡いただけるとありがたいです。</p>
             <p>「こんなお題を追加して欲しい！」などのご意見もお待ちしております。</p>
-            <v-btn x-large class="primary ma-4" @click="contactButtonEvent()">お問い合わせフォーム</v-btn>
+            <v-btn x-large class="primary mt-4" @click="contactButtonEvent()">お問い合わせフォーム</v-btn>
           </div>
         </v-container>
       </v-container>
