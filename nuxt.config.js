@@ -52,13 +52,28 @@ export default {
 
   modules: [
     '@nuxtjs/axios',
-    '@nuxtjs/gtm'
+    '@nuxtjs/gtm',
+    '@nuxtjs/sitemap'
   ],
 
   axios: {},
 
   gtm: {
     id: 'GTM-NZZ4LV8'
+  },
+
+  sitemap: {
+    hostname: 'https://yochy-cea25.web.app/',
+    gzip: true,
+    routes: [
+      {
+        url: '/',
+        priority: 1
+      },
+      '/about',
+      '/play',
+      '/privacy_policy'
+    ]
   },
 
   pwa: {
