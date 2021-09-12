@@ -4,7 +4,7 @@
       <v-app-bar-nav-icon @click="back()">
         <v-icon large color="black">mdi-chevron-left</v-icon>
       </v-app-bar-nav-icon>
-      <v-app-bar-title>このアプリについて</v-app-bar-title>
+      <v-toolbar-title>このアプリについて</v-toolbar-title>
     </v-app-bar>
     <v-main class="background">
       <v-container class="px-8">
