@@ -87,6 +87,10 @@ export default class PlayPage extends Vue {
     const res = await this.$themeRepository.getThemes();
 
     if (res.status !== 200) {
+      if (this.from === 'mobile') {
+        window.location.href = 'yochy-mobile:showErrorModal';
+        return;
+      }
       alert('エラーが発生しました。トップ画面に戻ります。');
       this.$router.push('/');
       return;
