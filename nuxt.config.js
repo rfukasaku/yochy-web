@@ -1,4 +1,4 @@
-const title = 'ヨッチー | 楽しい話題提供アプリ';
+const title = 'ヨッチー | 楽しい話題メーカー';
 const description = '楽しく盛り上がれる話題をランダムに表示します。飲み会や合コン、暇つぶしにオススメです！';
 const url = 'https://yochy-cea25.web.app';
 
